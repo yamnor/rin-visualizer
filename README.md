@@ -15,9 +15,9 @@
 
 #### クラウド環境で解析する場合
 
+- https://vis-pdb.streamlit.app
 
-
-#### ローカル環境で`streamlit`を起動する場合
+#### ローカル環境で解析する場合
 
       streamlit run vis-pdb.py
 
@@ -34,11 +34,25 @@
   - 表示されたものを適切に回転して、良い感じにする。
 - `Download a node file` で、`node.txt` をダウンロードする。
 
+### 補足事項
+
+- HIV プロテアーゼにペプチドが結合した複合体に対する PDB ファイルを `example/protease.pdb` に置いている。
+- クラウド環境（https://vis-pdb.streamlit.app）だと、t-SNE のプロセスに数分かかる。
+  - １回だけだったら良いけれど、`Perplexity` や `Rotate` などのパラメータを変えながら何度も試行錯誤するのはつらい。
+- この系について、あらかじめこのアプリで得られたデータを`example/node.txt`に置いている。
+  - この手順１はスキップして、手順２では `example/node.txt` を利用してもよい。
+
 ## 手順２：RIN 解析の結果を可視化する
 
 - RIN 解析で出力された `rin.fraction` を可視化する。
 
 ### アプリを起動する
+
+#### クラウド環境で解析する場合
+
+- https://vis-rin.streamlit.app
+
+#### ローカル環境で解析する場合
 
       streamlit run vis-rin.py
 
@@ -48,6 +62,10 @@
 - `Read a RIN fraction file`で、`rin.fraction`ファイルを読み込む。
   - `ring` ツールで出力されたもの。
 - ２つの RIN 解析結果を比較するときには、`Read an another RIN fraction file`で、別の`rin.fraction`ファイルを読み込む。
+
+### 補足事項
+
+- この手順では、RIN の結果をグラフ化しているだけなので、クラウド環境でもまったく問題ない。
 
 ## 参考
 
